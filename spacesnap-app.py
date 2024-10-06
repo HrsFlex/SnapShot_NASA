@@ -14,6 +14,9 @@ st.set_page_config(page_title="SpaceSnap: NASA Astronomy Picture of the Day")
 
 st.title("SpaceSnap: NASA Astronomy Picture of the Day 🔭")
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+set_background(f"{BASE_DIR}/img/bg.jpeg")
+
 # Fetch APOD data
 def fetch_apod_data():
     response = requests.get(f"{APOD_URL}?api_key={API_KEY}")
