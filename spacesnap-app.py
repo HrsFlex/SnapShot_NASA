@@ -2,12 +2,34 @@ import requests
 import pandas as pd
 import streamlit as st
 import random
+import os
+import base64
 
 # NASA APOD API URL
 APOD_URL = "https://api.nasa.gov/planetary/apod"
 
 # API key
 API_KEY = "6x1BFJezktd34g2615qORdf3FfOpIo0g3NcTX2tZ"
+
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def set_background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url("data:image/png;base64,%s");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+    </style>
+    ''' % bin_str
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 # Display the APOD and its information
 st.set_page_config(page_title="SpaceSnap: NASA Astronomy Picture of the Day")
