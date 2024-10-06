@@ -7,4 +7,4 @@ SpaceSnap is a simple web application that displays NASA's Astronomy Picture of 
 All Rights Reserverd 
 Harsh Kumar
 (NASA Citizen '23)
-(NASA Space App'23 - TOP 7th Among India)
+(NASA Space App'23 - TOP 7 Among India)
